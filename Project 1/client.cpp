@@ -9,6 +9,9 @@ int main()
 	weblog.opens("weblog.txt");
 	pages.opens("weblog_visitedpages_unique.txt");
 	pop = weblog.whowhere(pages);
-	weblog.print(pop);
+	 // weblog.prints();
+	pop.prints();
+	// weblog.print(pop);
+	
 }
 

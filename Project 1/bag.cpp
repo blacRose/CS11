@@ -29,7 +29,7 @@ void bag::removes(std::string strout)
 }
 size_t bag::where(std::string whatstr) const
 {
-	size_t which = 0;
+	size_t which = 9999;
 	if (data.size() != 0)
 	{
 		for (size_t i=0; i <= data.size() - 1; i++)
@@ -61,26 +61,28 @@ bag bag::whowhere(bag needle)
 		std::string ati = data.at(i);
 		eyepee = ati.substr(0, ati.find(" "));
 		pag = ati.substr(ati.find("GET ")+4);
-		pag = pag.substr(0, pag.find("HTTP/") - 1);
+		pag = pag.substr(0, pag.find("HTTP/")-1);
 		size_t whe = (size_t)whereo(eyepee);
-		if (whe >= 9999)
+		std::string pon = std::to_string(needle.where(pag));
+		if (whe == 9999)
 		{
 			// not in there yet
-			puto(eyepee, 9999);
-			needle.puto(std::to_string(needle.where(pag)), 9999);
+			putback(eyepee);
+			needle.putback(pon);
 		}
 		else
 		{
-			strup.clear();
 			// it's in there.
-			strup = needle.geto(whe) + " " + std::to_string(needle.where(pag));
-			needle.puto(strup, whe);
+			strup.clear();
+			strup = needle.geto(whe) + " " + pon;
+			needle.put(strup, whe);
 		}
 	}
 	return needle;
 }
 void bag::print(bag pag) const
 {
+	std::cout << odata.size() << std::endl;
 	for (size_t i=0; i <= odata.size() - 1; i++)
 	{
 		std::cout << odata.at(i) << " " << pag.geto(i) << std::endl;
@@ -93,10 +95,6 @@ void bag::prints() const
 		std::cout << odata.at(i) << std::endl;
 	}
 }
-std::string bag::oshow(size_t wat) const
-{
-	return odata.at(wat);
-}
 std::string bag::get(size_t whe) const
 {
 	return data.at(whe);
@@ -107,21 +105,12 @@ std::string bag::geto(size_t whe) const
 }
 void bag::put(std::string thes, size_t whe)
 {
-	if (whe <= 9998)
-	{
-		data.insert(data.begin() + whe, thes);
-	} else {
-		data.push_back(thes);
-	}
+	odata.emplace(odata.begin() + whe, thes);
+	// odata.pop_back();
 }
-void bag::puto(std::string thes, size_t whe)
+void bag::putback(std::string thes)
 {
-	if (whe <= 9998)
-	{
-		odata.insert(odata.begin() + whe, thes);
-	} else {
-		odata.push_back(thes);
-	}
+	odata.emplace_back(thes);
 }
 void bag::srm()
 {
