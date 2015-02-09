@@ -5,12 +5,12 @@
 int main()
 {
 	//main is here
-	bag weblog, pages, pop;
+	bag weblog, pages, pop, iplist, linked;
 	weblog.opens("weblog.txt");
 	pages.opens("weblog_visitedpages_unique.txt");
-	pop = weblog.whowhere(pages);
+	weblog.whowhere(pages, iplist, linked);
 	 // weblog.prints();
-	pop.prints();
+	iplist.print(linked);
 	// weblog.print(pop);
 	
 }
