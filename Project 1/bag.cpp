@@ -50,6 +50,9 @@ void bag::whowhere(bag pages, bag & iplist, bag & linked)
 // 		if (i>0)
 // 		{std::cout << eyepee << ": " << std::endl;
 // 		linked.prints();}
+		if (i==727){
+            std::cout<<"moo";
+		}
 		if (where == 9999)
 		{
 			// not in there yet.
