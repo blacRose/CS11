@@ -52,7 +52,7 @@ void bag::whowhere(bag pages, bag & iplist, bag & linked)
 // 		linked.prints();}
 		if (where == 9999)
 		{
-			// not in there yet
+			// not in there yet.
 			iplist.putback(eyepee);
 			linked.putback(pon);
 		}
