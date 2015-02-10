@@ -43,14 +43,14 @@ void bag::whowhere(bag pages, bag & iplist, bag & linked)
 	{
 		std::string ati = data.at(i);
 		eyepee = ati.substr(0, ati.find(" "));
-		pag = ati.substr(ati.find("GET ")+4);
+		pag = ati.substr(ati.find("T ")+2);
 		pag = pag.substr(0, pag.find("HTTP/")-1);
-		size_t whe = (size_t)iplist.where(eyepee);
+		size_t where = (size_t)iplist.where(eyepee);
 		std::string pon = std::to_string(pages.where(pag));
 // 		if (i>0)
 // 		{std::cout << eyepee << ": " << std::endl;
 // 		linked.prints();}
-		if (whe == 9999)
+		if (where == 9999)
 		{
 			// not in there yet
 			iplist.putback(eyepee);
@@ -59,9 +59,8 @@ void bag::whowhere(bag pages, bag & iplist, bag & linked)
 		else
 		{
 			// it's in there.
-			strup.clear();
-			strup = linked.get(whe) + " " + pon;
-			linked.put(strup, whe);
+			strup = linked.get(where) + " " + pon;
+			linked.put(strup, where);
 		}
 	}
 }
@@ -69,7 +68,7 @@ void bag::print(bag pag) const
 {
 	for (size_t i=0; i <= data.size() - 1; i++)
 	{
-		std::cout << data.at(i) << " " << pag.get(i) << std::endl;
+		std::cout << data.at(i) << ": " << pag.get(i) << std::endl;
 	}
 }
 void bag::prints() const
