@@ -47,6 +47,9 @@ void bag::whowhere(bag pages, bag & iplist, bag & linked)
 		pag = pag.substr(0, pag.find("HTTP/")-1);
 		size_t whe = (size_t)iplist.where(eyepee);
 		std::string pon = std::to_string(pages.where(pag));
+// 		if (i>0)
+// 		{std::cout << eyepee << ": " << std::endl;
+// 		linked.prints();}
 		if (whe == 9999)
 		{
 			// not in there yet
@@ -73,7 +76,7 @@ void bag::prints() const
 {
 	for (size_t i=0; i <= data.size() - 1; i++)
 	{
-		std::cout << data.at(i) << std::endl;
+		std::cout << i << ": " << data.at(i) << std::endl;
 	}
 }
 std::string bag::get(size_t whe) const
@@ -82,7 +85,7 @@ std::string bag::get(size_t whe) const
 }
 void bag::put(std::string thes, size_t whe)
 {
-	data.emplace(data.begin() + whe, thes);
+	data.emplace((data.begin() + whe), thes);
 }
 void bag::putback(std::string thes)
 {
