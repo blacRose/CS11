@@ -9,8 +9,7 @@ public:
 	void put(std::string, size_t);
 	void putback(std::string);
 	void print(bag) const;
-	void prints() const;
-	void srm();
+	void srm(); // sort and unique, but not using.
 private:
 	std::vector<std::string> data;
 	std::vector<std::string> odata;
