@@ -47,12 +47,6 @@ void bag::whowhere(bag pages, bag & iplist, bag & linked)
 		pag = pag.substr(0, pag.find("HTTP/")-1);
 		size_t where = (size_t)iplist.where(eyepee);
 		std::string pon = std::to_string(pages.where(pag));
-// 		if (i>0)
-// 		{std::cout << eyepee << ": " << std::endl;
-// 		linked.prints();}
-		if (i==727){
-            std::cout<<"moo";
-		}
 		if (where == 9999)
 		{
 			// not in there yet.
@@ -74,13 +68,6 @@ void bag::print(bag pag) const
 		std::cout << data.at(i) << ": " << pag.get(i) << std::endl;
 	}
 }
-void bag::prints() const
-{
-	for (size_t i=0; i <= data.size() - 1; i++)
-	{
-		std::cout << i << ": " << data.at(i) << std::endl;
-	}
-}
 std::string bag::get(size_t whe) const
 {
 	return data.at(whe);
@@ -99,23 +86,3 @@ void bag::srm()
 	sort(data.begin(), data.end());
 	data.erase(std::unique(data.begin(), data.end()), data.end());
 }
-/* for when I have a list of pages to deal with, store in a csv std::string in a vector with the same index as the IP.
-#include <vector>
-#include <std::string>
-#include <sstream>
-
-
-std::std::string str = "1,2,3,4,5,6";
-std::vector<int> vect;
-
-std::std::stringstream ss(str);
-
-int i;
-
-while (ss >> i)
-{
-vect.push_back(i);
-
-if (ss.peek() == ',')
-ss.ignore();
-}*/
