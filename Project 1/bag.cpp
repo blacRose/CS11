@@ -74,8 +74,9 @@ std::string bag::get(size_t whe) const
 }
 void bag::put(std::string thes, size_t whe)
 {
-	data.emplace(data.begin() + whe, thes);
-	data.erase(data.begin() + whe + 1);
+	data.at(whe) = thes;
+	// data.emplace(data.begin() + whe, thes);
+	// data.erase(data.begin() + whe + 1);
 }
 void bag::putback(std::string thes)
 {
