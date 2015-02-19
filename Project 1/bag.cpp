@@ -63,6 +63,7 @@ void bag::whowhere(bag pages, bag & iplist, bag & linked)
 }
 void bag::print(bag pag) const
 {
+	std::cout << data.size();
 	for (size_t i=0; i <= data.size() - 1; i++)
 	{
 		std::cout << data.at(i) << ": " << pag.get(i) << std::endl;
