@@ -1,27 +1,35 @@
 #include "lister.h"
 #include "list.h"
 
-void addToHead(const std::string&)
+lister::lister():head(NULL), size(0);
+void lister::addToHead(const std::string& datas)
+{
+	list* ndats = new list(datas);
+	if (head == 0)
+	{
+		head = ndats;
+	} else {
+		ndats->next = head;
+		head = ndats;
+	}
+}
+void lister::addToTail(const std::string&)
 {
 	
 }
-void addToTail(const std::string&)
+void lister::addWhere(const std::string&, size_t)
 {
 	
 }
-void addWhere(const std::string&, size_t)
+void lister::sortAdd(const std::string&)
 {
 	
 }
-void sortAdd(const std::string&)
+void lister::printList() const
 {
 	
 }
-void printList() const
-{
-	
-}
-std::string get(size_t)
+std::string lister::get(size_t)
 {
 	
 }

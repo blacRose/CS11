@@ -9,4 +9,5 @@ public:
 	std::string get(size_t);
 private:
 	list* head;
+	size_t size;
 };
