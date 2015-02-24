@@ -1,32 +1,7 @@
 #include "lister.h"
-#include "list.h"
-#include <iostream>
 using namespace std;
 
 lister::lister():head(NULL), size(0)
-{
-	
-}
-void lister::addToHead(const string& datas)
-{
-	list* ndats = new list(datas);
-	if (head == 0)
-	{
-		head = ndats;
-	} else {
-		ndats->next = head;
-		head = ndats;
-	}
-}
-void lister::addToTail(const string&)
-{
-	
-}
-void lister::addWhere(const string&, size_t)
-{
-	
-}
-void lister::sortAdd(const string&)
 {
 	
 }
@@ -57,7 +32,7 @@ void insert(const std::string moose)
 		//traverse list to find loc to ins
 		while (curr != NULL)
 		{
-			if (curr->data >= newNode->data)
+			if (curr->data >= ndats->data)
 			{
 				break;
 			} else {
@@ -73,7 +48,7 @@ void insert(const std::string moose)
 		} else {
 		// insert after head (not empty)
 			ndats->next = curr;
-			trail->next = ndats
+			trail->next = ndats;
 		}
 	}
 	size++;

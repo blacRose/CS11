@@ -7,6 +7,7 @@
 
 
 #include <iostream>
+#include "list.h"
 #include "lister.h"
 
 int main()
