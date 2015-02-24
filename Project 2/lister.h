@@ -1,4 +1,4 @@
-class lister
+Class lister
 {
 public:
 	void addToHead(const std::string&);
@@ -9,4 +9,4 @@ public:
 	std::string get(size_t);
 private:
 	list* head;
-}
+};

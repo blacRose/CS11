@@ -7,8 +7,9 @@
 
 
 #include <iostream>
+#include "lister.h"
 
 int main()
 {
-	std::cout << "moo";
+	
 }
