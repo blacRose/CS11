@@ -9,6 +9,7 @@ public:
 	void addWhere(const std::string&, size_t);
 	void sortAdd(const std::string&);
 	void printList() const;
+	void insert(const std::string);
 	std::string get(size_t);
 private:
 	list* head;

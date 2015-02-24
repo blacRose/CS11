@@ -1,10 +1,13 @@
 #include "lister.h"
 #include "list.h"
 #include <iostream>
+using namespace std;
 
 lister::lister():head(NULL), size(0)
-{}
-void lister::addToHead(const std::string& datas)
+{
+	
+}
+void lister::addToHead(const string& datas)
 {
 	list* ndats = new list(datas);
 	if (head == 0)
@@ -15,15 +18,15 @@ void lister::addToHead(const std::string& datas)
 		head = ndats;
 	}
 }
-void lister::addToTail(const std::string&)
+void lister::addToTail(const string&)
 {
 	
 }
-void lister::addWhere(const std::string&, size_t)
+void lister::addWhere(const string&, size_t)
 {
 	
 }
-void lister::sortAdd(const std::string&)
+void lister::sortAdd(const string&)
 {
 	
 }
@@ -32,10 +35,41 @@ void lister::printList() const
 	list* tp = head;
 	while (tp != NULL)
 	{
-		std::cout << tp << std::endl;
+		cout << tp << endl;
 	}
 }
-std::string lister::get(size_t)
+string lister::get(size_t)
 {
 	
 }
+void insert(const std::string moose, const std::string after)
+{
+	list* ndats = new list(moose);
+	//empty
+	if (head == NULL)
+	{
+		//insert at head (empty)
+		head = ndats;
+	} else {
+		list* curr = head;
+		list* trail = NULL;
+		
+		//traverse list to find loc to ins
+		while (curr != NULL)
+		{
+			if (curr->data >= newNode->data)
+			{
+				break;
+			} else {
+				trail = curr;
+				curr = curr->next;
+			}
+		}
+		//insert at head (not empty)
+		if (curr = head)
+		{
+			ndats->next = head;
+			head = ndats;
+		}
+		// insert after head
+	}
