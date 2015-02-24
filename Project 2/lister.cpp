@@ -42,7 +42,7 @@ string lister::get(size_t)
 {
 	
 }
-void insert(const std::string moose, const std::string after)
+void insert(const std::string moose)
 {
 	list* ndats = new list(moose);
 	//empty
@@ -70,6 +70,11 @@ void insert(const std::string moose, const std::string after)
 		{
 			ndats->next = head;
 			head = ndats;
+		} else {
+		// insert after head (not empty)
+			ndats->next = curr;
+			trail->next = ndats
 		}
-		// insert after head
 	}
+	size++;
+}
