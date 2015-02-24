@@ -1,7 +1,9 @@
 #include "lister.h"
 #include "list.h"
+#include <iostream>
 
-lister::lister():head(NULL), size(0);
+lister::lister():head(NULL), size(0)
+{}
 void lister::addToHead(const std::string& datas)
 {
 	list* ndats = new list(datas);
@@ -27,7 +29,11 @@ void lister::sortAdd(const std::string&)
 }
 void lister::printList() const
 {
-	
+	list* tp = head;
+	while (tp != NULL)
+	{
+		std::cout << tp << std::endl;
+	}
 }
 std::string lister::get(size_t)
 {

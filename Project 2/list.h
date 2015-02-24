@@ -1,8 +1,12 @@
-Class list
+#include <iostream>
+using namespace std;
+
+class list
 {
 public:
-	list(std::sting datas = "");
-private:
-	std::string data;
+	ostream& operator<<(ostream, const list&);
+	list(string datas = "");
 	list* next;
+private:
+	string data;
 };

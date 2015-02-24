@@ -1,6 +1,8 @@
+#include <iostream>
 #include "list.h"
+using namespace std;
 
-list::list(std::string datas):data(datas),next(NULL)
+list::list(string datas):data(datas),next(NULL)
 {}
 
 ostream& operator<<(ostream os, const list& l)
