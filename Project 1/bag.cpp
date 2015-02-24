@@ -18,11 +18,6 @@ void bag::opens(std::string infi)
 	}
 	iflol.close();
 }
-void bag::removes(std::string strout)
-{
-	size_t find = where(strout);
-	data.erase(data.begin()+find);
-}
 size_t bag::where(std::string whatstr) const
 {
 	size_t which = 9999;

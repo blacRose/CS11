@@ -1,7 +1,6 @@
 class bag
 {
 public:
-	void removes(std::string);
 	size_t where(std::string) const;
 	void opens(std::string);
 	void whowhere(bag, bag&, bag&);
@@ -12,5 +11,4 @@ public:
 	void srm(); // sort and unique, but not using.
 private:
 	std::vector<std::string> data;
-	std::vector<std::string> odata;
 };
