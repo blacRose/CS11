@@ -1,7 +1,9 @@
 #include "list.h"
 
-list::list()
+list::list(std::string datas):data(datas),next(NULL)
+{}
+
+ostream& operator<<(ostream os, const list& l)
 {
-	data = datas;
-	next = NULL;
+	return os << c.data;
 }
