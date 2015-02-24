@@ -1,6 +1,9 @@
-Class lister
+#include <iostream>
+
+class lister
 {
 public:
+	lister();
 	void addToHead(const std::string&);
 	void addToTail(const std::string&);
 	void addWhere(const std::string&, size_t);
