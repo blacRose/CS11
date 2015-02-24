@@ -5,19 +5,15 @@ lister::lister():head(NULL), size(0)
 {
 	
 }
-void lister::printList() const
+void lister::print() const
 {
 	list* tp = head;
 	while (tp != NULL)
 	{
-		cout << tp << endl;
+		cout << *tp << endl;
 	}
 }
-string lister::get(size_t)
-{
-	
-}
-void insert(const std::string moose)
+void lister::put(const std::string moose)
 {
 	list* ndats = new list(moose);
 	//empty
@@ -41,7 +37,7 @@ void insert(const std::string moose)
 			}
 		}
 		//insert at head (not empty)
-		if (curr = head)
+		if (curr == head)
 		{
 			ndats->next = head;
 			head = ndats;
