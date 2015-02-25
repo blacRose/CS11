@@ -8,12 +8,12 @@ lister::lister():head(NULL), size(0)
 }
 void lister::insert()
 {
-	string ins ="";
+	string ins = "";
 	while (ins != "q")
 	{
-		cout << "q to quit or object to add to keep going: ";
+		cout << "q to end inserting, or object to add to keep going: ";
 		cin >> ins;
-		if (ins != "q")
+		if (ins != "q" && ins != "Q")
 			put_back(ins);
 	}
 }
@@ -72,10 +72,10 @@ bool lister::isempty() const
 void lister::print() const
 {
 	list* tp = head;
-	size_t i=0;
+	size_t i = 0;
 	while (tp != NULL)
 	{
-		if (i==99)
+		if (i == 99)
 			break;
 		cout << i << ": " << *tp << endl;
 		tp = tp->next;
@@ -134,11 +134,9 @@ void lister::put_back(string that)
 	{
 		list* last = end();
 		last->next = new list(that);
-		last->next->next = 0;
-		last->next->data = that;
 		++size;
 	} else {
 		//empty list, need new item
-		head = new list;
+		head = new list(that);
 	}
 }
