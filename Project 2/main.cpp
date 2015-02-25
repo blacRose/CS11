@@ -13,13 +13,13 @@
 using namespace std;
 int main()
 {
-	string poo = ""
+	string poo = "";
 	string inp;
 	lister lone;
 	lone.insert();
 	while (poo !="q")
 	{
-		lone.movetob();
+		lone.movtob();
 		cout << "q to quit or anything to keep going: ";
 		cin >> poo;
 	}

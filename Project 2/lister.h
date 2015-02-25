@@ -8,6 +8,7 @@ class lister
 {
 public:
 	lister();
+	void insert();
 	bool isempty() const;
 	void movtob();
 	void print() const;

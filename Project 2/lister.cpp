@@ -6,6 +6,17 @@ lister::lister():head(NULL), size(0)
 {
 	
 }
+void lister::insert()
+{
+	string ins ="";
+	while (ins != "q")
+	{
+		cout << "q to quit or object to add to keep going: ";
+		cin >> ins;
+		if (ins != "q")
+			put(ins);
+	}
+}
 void lister::movtob()
 {
 	// precondition: list isn't empty
@@ -41,6 +52,7 @@ void lister::movtob()
 			}
 		}
 	} else {
+		// derp
 		cout << "Your list is empty." << endl;
 	}
 	// postcondition: this function removes the data item marked by a cursor from a linked list and reinserts the data item at the beginning of the list.
