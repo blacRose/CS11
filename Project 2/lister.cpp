@@ -25,6 +25,10 @@ void lister::movtob()
 			} else {
 				if (tos == 0)
 				{
+					// move head to head? silly!
+					cout << "Yeah. Item index 0 is already at the head, silly" << endl;
+				} else {
+					// it's an actual index.
 					for (size_t moo; moo < tos; ++moo)
 					{
 						// step to the one to move.
