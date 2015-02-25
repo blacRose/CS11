@@ -20,7 +20,7 @@ void lister::insert()
 void lister::movtob()
 {
 	// precondition: list isn't empty
-	if (!is_empty())
+	if (!izempty())
 	{
 		list* curr = head;
 		size_t tos = 9999999;
@@ -57,7 +57,7 @@ void lister::movtob()
 	}
 	// postcondition: this function removes the data item marked by a cursor from a linked list and reinserts the data item at the beginning of the list.
 }
-bool lister::is_empty() const
+bool lister::izempty() const
 {
 	if (head == NULL)
 	{
@@ -116,7 +116,7 @@ void lister::put(const std::string moose)
 list* end()
 {
 	list* theend = head;
-	if (!is_empty())
+	if (!izempty())
 	{
 		while (theend->next != 0)
 		{

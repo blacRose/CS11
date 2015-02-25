@@ -9,7 +9,7 @@ class lister
 public:
 	lister();
 	void insert();
-	bool is_empty() const;
+	bool izempty() const;
 	void movtob();
 	void print() const;
 	void put(const std::string);
