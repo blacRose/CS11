@@ -6,8 +6,9 @@
 class list
 {
 public:
-	friend std::ostream& operator<<(std::ostream, const list&);
+	friend std::ostream& operator<<(std::ostream &, const list&);
 	list(std::string datas = "");
+private:
 	list* next;
 	std::string data;
 };

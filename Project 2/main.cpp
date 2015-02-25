@@ -13,12 +13,14 @@
 using namespace std;
 int main()
 {
+	string poo = ""
 	string inp;
 	lister lone;
-	do {
-		cout << "GET INPUT" << endl;
-		cin >> inp;
-		lone.put(inp);
-	} while (inp != "q");
-	lone.print();
+	lone.insert();
+	while (poo !="q")
+	{
+		lone.movetob();
+		cout << "q to quit or anything to keep going: ";
+		cin >> poo;
+	}
 }
