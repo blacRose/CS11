@@ -113,23 +113,28 @@ void lister::put(const std::string moose)
 	}
 	++size;
 }
-list* end()
+list* lister::end()
 {
 	list* theend = head;
-	if (!izempty())
+	while (theend->next != 0)
 	{
-		while (theend->next != 0)
-		{
-			if (theend->next != 0)
-				theend = theend->next;
-		}
+		if (theend->next != 0)
+			theend = theend->next;
 	}
 	return theend;
 }
-void lister::put_back(string)
+void lister::put_back(string that)
 {
-	list* last = end();
-	last->next = new list*;
-	last->next->next = 0;
-	++size;
+	if (!izempty())
+	{
+		list* last = end();
+		last->next = new list;
+		last->next->next = 0;
+		last->next->data = that;
+		++size;
+	} else {
+		//empty list, need new item
+		head = new list;
+		head->data = that;
+	}
 }
