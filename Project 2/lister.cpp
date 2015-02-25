@@ -48,6 +48,7 @@ void lister::movtob()
 					// move curr to head
 					curr->next = head;
 					head = curr;
+					cout << head->next->next->data;
 				}
 			}
 		}
@@ -72,6 +73,8 @@ void lister::print() const
 	size_t i=0;
 	while (tp != NULL)
 	{
+		if (i==99)
+			break;
 		cout << i << ": " << *tp << endl;
 		tp = tp->next;
 		++i;
