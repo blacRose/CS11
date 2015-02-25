@@ -20,9 +20,10 @@ void lister::insert()
 void lister::movtob()
 {
 	// precondition: list isn't empty
-	if (!izempty())
+	if (!isempty())
 	{
 		list* curr = head;
+		list* prev;
 		size_t tos = 9999999;
 		while (tos > size)
 		{
@@ -40,15 +41,16 @@ void lister::movtob()
 					cout << "Yeah. Item index 0 is already at the head, silly." << endl;
 				} else {
 					// it's an actual index.
-					for (size_t moo; moo < tos; ++moo)
+					for (size_t moo = 0; moo < tos; ++moo)
 					{
 						// step to the one to move.
+						prev = curr;
 						curr = curr->next;
 					}
 					// move curr to head
+					prev->next = curr->next;
 					curr->next = head;
 					head = curr;
-					cout << head->next->next->data;
 				}
 			}
 		}
@@ -58,7 +60,7 @@ void lister::movtob()
 	}
 	// postcondition: this function removes the data item marked by a cursor from a linked list and reinserts the data item at the beginning of the list.
 }
-bool lister::izempty() const
+bool lister::isempty() const
 {
 	if (head == NULL)
 	{
@@ -128,16 +130,15 @@ list* lister::end()
 }
 void lister::put_back(string that)
 {
-	if (!izempty())
+	if (!isempty())
 	{
 		list* last = end();
-		last->next = new list;
+		last->next = new list(that);
 		last->next->next = 0;
 		last->next->data = that;
 		++size;
 	} else {
 		//empty list, need new item
 		head = new list;
-		head->data = that;
 	}
 }
