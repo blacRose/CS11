@@ -14,7 +14,7 @@ void lister::insert()
 		cout << "q to quit or object to add to keep going: ";
 		cin >> ins;
 		if (ins != "q")
-			put(ins);
+			put_back(ins);
 	}
 }
 void lister::movtob()
@@ -112,4 +112,22 @@ void lister::put(const std::string moose)
 		}
 	}
 	++size;
+}
+list* end()
+{
+	// precondition: list isn't empty
+	if (!isempty())
+	{
+		list* theend = head;
+		while (theend->next != 0)
+		{
+			if (theend->next != 0)
+				theend = theend->next;
+		}
+		return theend;
+	}
+}
+void lister::put_back(std::string)
+{
+	list* last = end();
 }

@@ -13,6 +13,7 @@ public:
 	void movtob();
 	void print() const;
 	void put(const std::string);
+	list* end();
 private:
 	list* head;
 	size_t size;
