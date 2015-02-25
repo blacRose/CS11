@@ -14,6 +14,7 @@ public:
 	void print() const;
 	void put(const std::string);
 	list* end();
+	void put_back(std::string);
 private:
 	list* head;
 	size_t size;
