@@ -9,6 +9,6 @@ public:
 	friend std::ostream& operator<<(std::ostream &, const list&);
 	list(std::string datas = "");
 	list* next;
-	std::string data;
+	void* data;
 };
 #endif
