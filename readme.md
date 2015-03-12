@@ -8,7 +8,7 @@
 
 ###Project 2
 
-[Link to tasks](https://online.santarosa.edu/moodle/mod/assign/view.php?id=165272)
+[Link to tasks](https://online.santarosa.edu/moodle/mod/assign/view.php?id=165272) 
 
 ###Project 3
 
