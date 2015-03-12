@@ -12,6 +12,8 @@
 
 ###Project 3
 
+[Link to tasks](https://online.santarosa.edu/moodle/mod/assign/view.php?id=165274)
+
 ####Part 1.
 Convert your project 2 list container class to be a template. Populate
 at least two different objects of your container class each with a different
@@ -28,3 +30,11 @@ Write an alternative program to meet the requirements for project 2
 using the STL list template class instead. Your function should use an iterator
 as the cursor for your list objects. As with part 1, you should demonstrate the
 use of more than one data type.
+
+###Project 4
+
+[Link to tasks](https://online.santarosa.edu/moodle/mod/assign/view.php?id=165278)
+
+###Project 5
+
+[Link to tasks](https://online.santarosa.edu/moodle/mod/assign/view.php?id=165282)
