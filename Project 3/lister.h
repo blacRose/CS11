@@ -13,7 +13,7 @@ public:
   void movtob();
   void print() const;
   void put(const std::string);
-  list *end();
+  list* end();
   void put_back(std::string);
 
 private:

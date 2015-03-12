@@ -99,7 +99,7 @@ void lister::put(const std::string moose) {
   }
   ++size;
 }
-list *lister::end() {
+list* lister::end() {
   list *theend = head;
   while (theend->next != 0) {
     if (theend->next != 0)
