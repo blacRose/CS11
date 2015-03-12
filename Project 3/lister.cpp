@@ -15,8 +15,8 @@ void lister::insert() {
 void lister::movtob() {
   // precondition: list isn't empty
   if (!isempty()) {
-    list *curr = head;
-    list *prev;
+    list* curr = head;
+    list* prev;
     size_t tos = 9999999;
     while (tos > size) {
       cout << "Index: item" << endl;
@@ -58,7 +58,7 @@ bool lister::isempty() const {
   }
 }
 void lister::print() const {
-  list *tp = head;
+  list* tp = head;
   size_t i = 0;
   while (tp != NULL) {
     if (i == 99)
@@ -69,14 +69,14 @@ void lister::print() const {
   }
 }
 void lister::put(const std::string moose) {
-  list *ndats = new list(moose);
+  list* ndats = new list(moose);
   // empty
   if (head == NULL) {
     // insert at head (empty)
     head = ndats;
   } else {
-    list *curr = head;
-    list *trail = NULL;
+    list* curr = head;
+    list* trail = NULL;
 
     // traverse list to find loc to ins
     while (curr != NULL) {
@@ -99,8 +99,8 @@ void lister::put(const std::string moose) {
   }
   ++size;
 }
-list *lister::end() {
-  list *theend = head;
+list* lister::end() {
+  list* theend = head;
   while (theend->next != 0) {
     if (theend->next != 0)
       theend = theend->next;
@@ -109,7 +109,7 @@ list *lister::end() {
 }
 void lister::put_back(string that) {
   if (!isempty()) {
-    list *last = end();
+    list* last = end();
     last->next = new list(that);
     ++size;
   } else {
