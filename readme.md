@@ -50,10 +50,25 @@ Each line in the weblog file includes an IP address and a url of the webpage tha
 
 142.177.53.120 2
 
-#### Deliverables:
+###Project 2
 
-Turn in your code on Moodle. Do not include the executable (I can compile and run it myself), but make sure to include all necessary files.
+####MM, YUP!
 
-*This project is derived from a similar project in "Building an Intelligent Web" by Rajendrar Akerkar and Pawan Lingras, 2008*
+###Project 3
 
-*Web Usage Mining is " the task of applying data mining techniques to discover usage patterns from Web data in order to understand and better serve the needs of users navigating on the Web." Definition derived from: Srivastava, R. Cooley, M. Deshpande, and P.-N. Tan, " Web usage mining: Discovery and applications of usage patterns from web data," SIGKDD Explorations, Vol. 1, No. 2, pp. 12-23, 2000*
+####Part 1.
+Convert your project 2 list container class to be a template. Populate
+at least two different objects of your container class each with a different
+data type (i.e. same container class, different data types). Provide client code
+that uses your project 3 function for both of these lists.
+
+#####Note:
+As long as the finished program meets the requirements of project 3 as a
+template, you can modify your project 3 code in any way necessary, including
+redesigning your original program (optional).
+
+####Part 2.
+Write an alternative program to meet the requirements for project 2
+using the STL list template class instead. Your function should use an iterator
+as the cursor for your list objects. As with part 1, you should demonstrate the
+use of more than one data type.
