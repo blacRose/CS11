@@ -17,6 +17,6 @@ public:
   void put_back(std::string);
 
 private:
-  list *head;
+  list* head;
   size_t size;
 };
