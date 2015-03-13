@@ -5,6 +5,7 @@
 // series:
 // http://www.learnerstv.com/Free-Computer-Science-Video-lectures-ltv733-Page1.htm
 
+template <class T>
 class lister {
 public:
   lister();
@@ -14,9 +15,9 @@ public:
   void print() const;
   void put(const std::string);
   void put_back(std::string);
-  list<std::string>* last_element();
+  list<T>* last_element();
 
 private:
-  list<std::string>* head;
+  list<T>* head;
   size_t size;
 };

@@ -1,10 +1,10 @@
 #include <iostream>
 #include "lister.h"
-using namespace std;
 
+template <class T>
 lister::lister() : head(NULL), size(0) {}
 void lister::insert() {
-  string ins = "";
+  T ins = "";
   while (ins != "q") {
     cout << "q to end inserting, or object to add to keep going: ";
     cin >> ins;
@@ -15,8 +15,8 @@ void lister::insert() {
 void lister::movtob() {
   // precondition: list isn't empty
   if (!isempty()) {
-    list<std::string>* curr = head;
-    list<std::string>* prev;
+    list<T>* curr = head;
+    list<T>* prev;
     size_t tos = 9999999;
     while (tos > size) {
       cout << "Index: item" << endl;
@@ -58,7 +58,7 @@ bool lister::isempty() const {
   }
 }
 void lister::print() const {
-  list<std::string>* tp = head;
+  list<T>* tp = head;
   size_t i = 0;
   while (tp != NULL) {
     if (i == 99)
@@ -68,15 +68,15 @@ void lister::print() const {
     ++i;
   }
 }
-void lister::put(const std::string instring) {
-  list<std::string>* ndats = new list<std::string>(instring);
+void lister::put(const T instring) {
+  list<T>* ndats = new list<T>(instring);
   // empty
   if (head == NULL) {
     // insert at head (empty)
     head = ndats;
   } else {
-    list<std::string>* curr = head;
-    list<std::string>* trail = NULL;
+    list<T>* curr = head;
+    list<T>* trail = NULL;
 
     // traverse list to find loc to ins
     while (curr != NULL) {
@@ -99,18 +99,18 @@ void lister::put(const std::string instring) {
   }
   ++size;
 }
-void lister::put_back(string that) {
+void lister::put_back(T that) {
   if (!isempty()) {
-    list<std::string>* last = last_element();
-    last->next = new list<std::string>(that);
+    list<T>* last = last_element();
+    last->next = new list<T>(that);
     ++size;
   } else {
     // empty list, need new item
-    head = new list<std::string>(that);
+    head = new list<T>(that);
   }
 }
-list<std::string>* lister::last_element() {
-  list<std::string>* theend = head;
+list<T>* lister::last_element() {
+  list<T>* theend = head;
   while (theend->next != 0) {
     if (theend->next != 0)
       theend = theend->next;
