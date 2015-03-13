@@ -8,14 +8,15 @@
 class lister {
 public:
   lister();
+  void insert();
   bool isempty() const;
   void movtob();
   void print() const;
   void put(const std::string);
   void put_back(std::string);
-  list* last_element();
+  list<std::string>* last_element();
 
 private:
-  list* head;
+  list<std::string>* head;
   size_t size;
 };

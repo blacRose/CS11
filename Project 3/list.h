@@ -5,7 +5,7 @@
 template<class T> class list {
 public:
   friend std::ostream &operator<<(std::ostream &, const list<std::string> &);
-  list(std::string datas = "");
+  list(T datas) : data(datas), next(NULL) {};
   list<std::string>* next;
   T data;
 };
