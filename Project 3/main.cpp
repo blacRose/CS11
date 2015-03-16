@@ -11,13 +11,13 @@ This is part one...*/
 #include "lister.h"
 
 using namespace std;
+
 int main() {
   string poo = "";
-  string inp;
-  lister<std::string> lone;
-  lone.insert();
+  lister<string> lone;
+  // lone.insert();
   while (poo != "q") {
-    lone.movtob();
+    // lone.movtob();
     cout << "q to quit or anything to keep going: ";
     cin >> poo;
   }
