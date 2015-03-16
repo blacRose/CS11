@@ -4,15 +4,7 @@
 * MM, YUP!
 * Author: Shelby Munsch
 
-#include <iostream>
-#include "list.h"
-#include "lister.h"
-
-int main(int argc, char const *argv[]) {
-  lister lone, ltwo;
-
-  return 0;
-}*/
+This is part one...*/
 
 #include <iostream>
 #include "list.h"
@@ -22,7 +14,7 @@ using namespace std;
 int main() {
   string poo = "";
   string inp;
-  lister lone;
+  lister<std::string> lone;
   lone.insert();
   while (poo != "q") {
     lone.movtob();

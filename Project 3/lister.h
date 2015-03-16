@@ -13,8 +13,8 @@ public:
   bool isempty() const;
   void movtob();
   void print() const;
-  void put(const std::string);
-  void put_back(std::string);
+  void put(T);
+  void put_back(T);
   list<T>* last_element();
 
 private:

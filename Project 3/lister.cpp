@@ -2,33 +2,35 @@
 #include "lister.h"
 
 template <class T>
-lister::lister() : head(NULL), size(0) {}
-void lister::insert() {
+lister<T>::lister() : head(NULL), size(0) {}
+template <class T>
+void lister<T>::insert() {
   T ins = "";
   while (ins != "q") {
-    cout << "q to end inserting, or object to add to keep going: ";
-    cin >> ins;
+    std::cout << "q to end inserting, or object to add to keep going: ";
+    std::cin >> ins;
     if (ins != "q" && ins != "Q")
       put_back(ins);
   }
 }
-void lister::movtob() {
+template <class T>
+void lister<T>::movtob() {
   // precondition: list isn't empty
   if (!isempty()) {
     list<T>* curr = head;
     list<T>* prev;
     size_t tos = 9999999;
     while (tos > size) {
-      cout << "Index: item" << endl;
+      std::cout << "Index: item" << std::endl;
       print();
-      cout << "Index to move to start: ";
-      cin >> tos;
+      std::cout << "Index to move to start: ";
+      std::cin >> tos;
       if (tos > size) {
-        cout << "Please enter an actual index, yo." << endl;
+        std::cout << "Please enter an actual index, yo." << std::endl;
       } else {
         if (tos == 0) {
           // move head to head? silly!
-          cout << "Yeah. Item index 0 is already at the head, silly." << endl;
+          std::cout << "Yeah. Item index 0 is already at the head, silly." << std::endl;
         } else {
           // it's an actual index.
           for (size_t moo = 0; moo < tos; ++moo) {
@@ -45,30 +47,33 @@ void lister::movtob() {
     }
   } else {
     // derp
-    cout << "Your list is empty." << endl;
+    std::cout << "Your list is empty." << std::endl;
   }
   // postcondition: this function removes the data item marked by a cursor from
   // a linked list and reinserts the data item at the beginning of the list.
 }
-bool lister::isempty() const {
+template <class T>
+bool lister<T>::isempty() const {
   if (head == NULL) {
     return true;
   } else {
     return false;
   }
 }
-void lister::print() const {
+template <class T>
+void lister<T>::print() const {
   list<T>* tp = head;
   size_t i = 0;
   while (tp != NULL) {
     if (i == 99)
       break;
-    cout << i << ": " << *tp << endl;
+    std::cout << i << ": " << *tp << std::endl;
     tp = tp->next;
     ++i;
   }
 }
-void lister::put(const T instring) {
+template <class T>
+void lister<T>::put(const T instring) {
   list<T>* ndats = new list<T>(instring);
   // empty
   if (head == NULL) {
@@ -99,7 +104,8 @@ void lister::put(const T instring) {
   }
   ++size;
 }
-void lister::put_back(T that) {
+template <class T>
+void lister<T>::put_back(T that) {
   if (!isempty()) {
     list<T>* last = last_element();
     last->next = new list<T>(that);
@@ -109,7 +115,8 @@ void lister::put_back(T that) {
     head = new list<T>(that);
   }
 }
-list<T>* lister::last_element() {
+template <class T>
+list<T>* lister<T>::last_element() {
   list<T>* theend = head;
   while (theend->next != 0) {
     if (theend->next != 0)
