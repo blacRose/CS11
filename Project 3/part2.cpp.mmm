@@ -1,0 +1,77 @@
+/*
+* main.cpp
+*
+* MM, YUP!
+* Author: Shelby Munsch
+
+this is Part 2... */
+
+#include <iostream>
+#include <list>
+
+void insert(std::list<std::string>&);
+void print(std::list<std::string>&);
+void movtob(std::list<std::string>&);
+
+using namespace std;
+int main() {
+  string poo = "";
+  string inp;
+  std::list<std::string> lone;
+  insert(lone);
+  while (poo != "q") {
+    movtob(lone);
+    cout << "q to quit or anything to keep going: ";
+    cin >> poo;
+  }
+}
+void insert(std::list<std::string> &lire) {
+  std::string ins = "";
+  while (ins != "q") {
+    cout << "q to end inserting, or object to add to keep going: ";
+    cin >> ins;
+    if (ins != "q" && ins != "Q")
+      lire.push_back(ins);
+  }
+}
+void movtob(std::list<std::string> &lire) {
+  // precondition: list isn't empty
+  if (lire.size() != 0) {
+    std::string cdata = "";
+    size_t tos = 9999999;
+    while (tos > lire.size()) {
+      cout << "Index: item" << endl;
+      print(lire);
+      cout << "Index to move to start: ";
+      cin >> tos;
+      if (tos > lire.size()) {
+        cout << "Please enter an actual index, yo." << endl;
+      } else {
+        if (tos <= 0) {
+          // move head to head? silly!
+          cout << "Yeah. Item index 0 is already at the head, silly." << endl;
+        } else {
+          // it's an actual index.
+          std::list<std::string>::iterator it = lire.begin();
+          std::advance(it, tos);
+          cdata = *it;
+        }
+        // move curr to head
+        lire.remove(cdata);
+        lire.emplace_front(cdata);
+      }
+    }
+  } else {
+  // derp
+  cout << "Your list is empty." << endl;
+}
+// postcondition: this function removes the data item marked by a cursor from
+// a linked list and reinserts the data item at the beginning of the list.
+}
+void print(std::list<std::string> &lire) {
+  size_t i = 0;
+  for (std::list<std::string>::iterator moo = lire.begin(); moo != lire.end(); ++moo) {
+    cout << i << ": " << *moo << endl;
+    ++i;
+  }
+}
