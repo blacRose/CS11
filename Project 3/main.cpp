@@ -15,9 +15,9 @@ using namespace std;
 int main() {
   string poo = "";
   lister<string> lone;
-  // lone.insert();
+  lone.insert();
   while (poo != "q") {
-    // lone.movtob();
+    lone.movtob();
     cout << "q to quit or anything to keep going: ";
     cin >> poo;
   }
