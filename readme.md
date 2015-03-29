@@ -20,7 +20,7 @@
 
 Web browsers commonly allow you to navigate through a "history" of web pages which have previously been visited. The mechanism is somewhat like a stack, in that the most recently visited pages are at the top of the history and revisited when the "back" button is pressed.
 
-However, the history does not really have infinite capacity. In reality, there may exist a fixed limit on the size of the history. The issue arises as to what should happen when the capacity is exhausted and a new item is pushed onto the stack. One possibility is to throw an exception. But this is not how a Web browser behaves. If it only has room to save_50_ pages in its history and yet you visit more pages, it will make room in the history for a new page by throwing away the page which is on the very bottom of the history (i.e., the least recently visited page). The formalStack interface does not help, as it gives us no way to directly access or remove the object on the bottom of the stack.
+However, the history does not really have infinite capacity. In reality, there may exist a fixed limit on the size of the history. The issue arises as to what should happen when the capacity is exhausted and a new item is pushed onto the stack. One possibility is to throw an exception. But this is not how a Web browser behaves. If it only has room to save _50_ pages in its history and yet you visit more pages, it will make room in the history for a new page by throwing away the page which is on the very bottom of the history (i.e., the least recently visited page). The formalStack interface does not help, as it gives us no way to directly access or remove the object on the bottom of the stack.
 
 In this assignment, we define a new ADT which we call aBoundedStack. The interface for aBoundedStack is very similar to the interface given for aStack. However in the case when the capacity is exhausted, a call topush will result in the placement of the new page at the expense of the loss of the least recently accessed page.
 
@@ -54,13 +54,13 @@ For this assignment, you will be required to give two different implementations 
 
 ### Grading Criteria:
 
-You have some flexibility in the way you design your code for this lab. I have a few requirements for the structure of your program, but your program may do more than what is required below to meet the functional requirements. Your program should meet the functional requirements and include_a minimum_of the following:
+You have some flexibility in the way you design your code for this lab. I have a few requirements for the structure of your program, but your program may do more than what is required below to meet the functional requirements. Your program should meet the functional requirements and include _a minimum_ of the following:
 
 *   Use the input file **weblog_unique.url** as input data.
 
 *   Create a stack container class called BoundedStack and two classes that inherit from BoundedStack: BoundedStackA and BoundedStackB as described above. Use a fixed array of size 50 to hold the stack items.**Note:** Do**not** use an STL container class for this lab.
 
-*   Create functions for your implementations that includes_at a minimum_ the following functions. You decide which class or classes the functions should belong to.
+*   Create functions for your implementations that includes _at a minimum_ the following functions. You decide which class or classes the functions should belong to.
 
 *   A function for adding an item to the top of the stack.
 
