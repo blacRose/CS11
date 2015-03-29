@@ -35,11 +35,22 @@ For this assignment, you will be required to give two different implementations 
 
 **BoundedStackA**
 
-    One way to implement aBoundedStack is as follows. Keep an underlying array, as with thevector class and use push and pop at the top of the stack as you go. In the case when pushing onto a "full" stack, use a loop to shift all items down one location in the array. By doing this, you will lose your bottommost item while opening up the topmost location for the newly pushed object.
+    One way to implement aBoundedStack is as follows. Keep an underlying
+    array, as with thevector class and use push and pop at the top of the
+    stack as you go. In the case when pushing onto a "full" stack, use a
+    loop to shift all items down one location in the array. By doing this,
+    you will lose your bottommost item while opening up the topmost
+    location for the newly pushed object.
 
 **BoundedStackB**
 
-    A second way to implement aBoundedStack is to use an array viewed in a circular manner. You can mark the "top" of the circular stack with an extra integer variable which is an index into your array. By also keeping explicit count of the current size of the stack, you can effectively identify the "bottom" of the stack as well, when needed. With a bit of care, you can more efficiently handle pushes, even those involving overflow.
+    A second way to implement aBoundedStack is to use an array viewed in a
+    circular manner. You can mark the "top" of the circular stack with an
+    extra integer variable which is an index into your array. By also
+    keeping explicit count of the current size of the stack, you can
+    effectively identify the "bottom" of the stack as well, when needed.
+    With a bit of care, you can more efficiently handle pushes, even those
+    involving overflow.
 
 ### Grading Criteria:
 
