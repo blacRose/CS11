@@ -2,8 +2,9 @@
 #include "boundedstacka.h"
 
 // uses a size var to see how many are in it.
+// ordered starting at 0
 
-boundedstacka::boundedstacka() {}
+boundedstacka::boundedstacka() : size(0) {}
 
 void boundedstacka::push(std::string pdata)
 {
@@ -34,4 +35,14 @@ std::string boundedstacka::pop()
   }
   size--;
   return temporary;
+}
+void boundedstacka::read(std::string infi)
+{
+  std::ifstream iflol;
+  std::string temps;
+  iflol.open(infi);
+  while (getline(iflol, temps)) {
+    data.push(temps);
+  }
+  iflol.close();
 }
