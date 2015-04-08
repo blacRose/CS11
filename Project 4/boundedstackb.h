@@ -5,6 +5,7 @@ public:
   void push(std::string);
   std::string pop();
 private:
-  boundedstack data;
+  std::string data[50];
+  size_t size;
   size_t top;
 }

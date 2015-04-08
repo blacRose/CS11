@@ -1,19 +1,25 @@
 #include <iostream>
 #include "boundedstackb.h"
 
-boundedstacka::boundedstackb() : top(50) {}
+boundedstackb::boundedstackb() : top(50) {}
 
-void boundedstacka::push(std::string pdata)
-{
-  if (top == 0)
-  {
-    data.pop();
+void boundedstackb::push(std::string pdata) {
+  if (top == 0) {
+    pop();
   } else {
     top--;
   }
-  data.data[top] = pdata;
+  data[top] = pdata;
 }
-std::string boundedstacka::pop()
-{
-  return data.pop();
+std::string boundedstackb::pop() {
+  if (size != 0) {
+    std::string temporary = data[top];
+    data[top] = "";
+    size--;
+    data.top++;
+    return temporary;
+  } else {
+    //can't remove. could cout, but I don't care
+    return "";
+  }
 }
