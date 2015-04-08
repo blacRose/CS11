@@ -1,4 +1,5 @@
 #include <iostream>
+#include "boundedstackb.h"
 
 boundedstacka::boundedstackb() : top(50) {}
 

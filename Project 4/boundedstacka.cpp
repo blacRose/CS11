@@ -1,4 +1,5 @@
 #include <iostream>
+#include "boundedstacka.h"
 
 boundedstacka::boundedstacka() {}
 
