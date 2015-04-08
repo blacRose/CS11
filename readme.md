@@ -58,7 +58,7 @@ You have some flexibility in the way you design your code for this lab. I have a
 
 *   Use the input file **weblog_unique.url** as input data.
 
-*   Create a stack container class called BoundedStack and two classes that inherit from BoundedStack: BoundedStackA and BoundedStackB as described above. Use a fixed array of size 50 to hold the stack items.**Note:** Do**not** use an STL container class for this lab.
+*   Create a stack container class called BoundedStack and two classes that inherit from BoundedStack: BoundedStackA and BoundedStackB as described above. Use a fixed array of size 50 to hold the stack items. **Note:** Do **not** use an STL container class for this lab.
 
 *   Create functions for your implementations that includes _at a minimum_ the following functions. You decide which class or classes the functions should belong to.
 
