@@ -7,7 +7,7 @@ class list {
 public:
   friend std::ostream &operator<<(std::ostream &, const list<T> &);
   list(T);
-  list<std::string>* next;
+  list<T>* next;
   T data;
 };
 #endif
