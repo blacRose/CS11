@@ -103,9 +103,9 @@ To accomplish this objective, create two objects of a template queue class and p
 This needs to be a template function because the poet may want to create a palindrome poem using characters rather than entire strings. For an example of a character palindrome poem, check out this page (scroll to example 2): [Reverse Poetry](http://wikidave.wikispaces.com/Reverse+Poetry)
 
 For this project, use the following prototype:
+
     template&lt;class Item&gt;
     void reversePoem(queue&lt;Item&gt; &initialQ, queue&lt;Item&gt; &finalQ);
-    
     // Precondition: Two objects, initialQ and finalQ, of a queue class have been filled with data.
     // Postcondition: The queue object initialQ has been loaded in reverse order onto the end of the queue object finalQ. In other words, finalQ contains its original data plus the reversed data from initialQ. The initialQ is empty.
 
