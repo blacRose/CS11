@@ -106,8 +106,8 @@ For this project, use the following prototype:
     template&lt;class Item&gt;
     void reversePoem(queue&lt;Item&gt; &initialQ, queue&lt;Item&gt; &finalQ);
     
-    // **Precondition**: Two objects, initialQ and finalQ, of a queue class have been filled with data.
-    // **Postcondition**: The queue object initialQ has been loaded in reverse order onto the end of the queue object finalQ. In other words, finalQ contains its original data plus the reversed data from initialQ. The initialQ is empty.
+    // Precondition: Two objects, initialQ and finalQ, of a queue class have been filled with data.
+    // Postcondition: The queue object initialQ has been loaded in reverse order onto the end of the queue object finalQ. In other words, finalQ contains its original data plus the reversed data from initialQ. The initialQ is empty.
 
 Your program must contain the following:
 
