@@ -15,7 +15,7 @@ void boundedstackb::push(std::string pdata) {
 std::string boundedstackb::pop() {
   //pulls newest element (data[top]) out and returns it.
   if (top == 50) {
-    std::string temporary = top();
+    std::string temporary = tops();
     data[top] = "";
     size--;
     top++;
@@ -25,7 +25,7 @@ std::string boundedstackb::pop() {
     return "";
   }
 }
-std::string boundedstackb::top()
+std::string boundedstackb::tops()
 {
   return data[top];
 }

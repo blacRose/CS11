@@ -10,8 +10,8 @@
 using namespace std;
 
 template <class Item> void reversePoem(queue<Item>, queue<Item> &);
-template <> void input(queue<char> &, queue<char> &);
-template <> void input(queue<string> &, queue<string> &);
+void input(queue<char> &, queue<char> &);
+void input(queue<string> &, queue<string> &);
 template <class Item> void printPoem(queue<Item>);
 
 int main() {

@@ -6,7 +6,7 @@
 
 void boundedstacka::push(std::string pdata)
 {
-  if (size() == 50)
+  if (size == 50)
   {
     // remove the last el (oldest) in array, it's full.
     data[size] = "";
@@ -14,7 +14,7 @@ void boundedstacka::push(std::string pdata)
   }
   // shift all elements and add new to beginnning
   std::string temporary;
-  for (size_t i = size(); i > 0; i--)
+  for (size_t i = size; i > 0; i--)
   {
     temporary = data[i];
     data[i+1] = temporary;
@@ -25,7 +25,7 @@ void boundedstacka::push(std::string pdata)
 std::string boundedstacka::pop()
 {
   // removes and returns the first (newest) element in the array.
-  temporary = data[0];
+  std::string temporary = data[0];
   for (size_t i = 0; i > size; i--)
   {
     temporary = data[i+1];
@@ -34,7 +34,7 @@ std::string boundedstacka::pop()
   size--;
   return temporary;
 }
-std::string boundedstacka::top()
+std::string boundedstacka::tops()
 {
   return data[size];
 }
