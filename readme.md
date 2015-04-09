@@ -117,22 +117,20 @@ Your program must contain the following:
 
 Here is an example in which the the poem above would be loaded into the queue objects. The chart below shows the queue states before and after the reversePoem function is called. The data is displayed from the front of the queue on top, to the back of the queue on bottom.
 
-<table>
-<tbody>
-<tr>
-<td></td>
-<td>Before the function</td>
-<td>After the function</td>
-</tr>
-<tr>
-<td>initialQ</td>
-<td>REVENGE<br> seeks destruction,<br> like a dragon<br> breathes<br> fire</td>
-<td>/*EMPTY*/</td>
-</tr>
-<tr>
-<td>finalQ</td>
-<td>REVENGE<br> seeks destruction,<br> like a dragon<br> breathes<br> fire</td>
-<td>REVENGE<br> seeks destruction,<br> like a dragon<br> breathes<br> fire<br> fire<br> breathes<br> like a dragon<br> seeks destruction,<br> REVENGE</td>
-</tr>
-</tbody>
-</table>
+||Before the function|After the function|
+|---|---|---|
+|initialQ|REVENGE|/*EMPTY*/|
+||seeks destruction,|||
+||like a dragon|||
+||breathes|||
+||fire|||
+|---||---|---|
+|finalQ|REVENGE|REVENGE|
+||seeks destruction,|seeks destruction,|
+||like a dragon|like a dragon|
+||breathes|breathes|
+||fire|fire|
+|||breathes|
+|||like a dragon|
+|||seeks destruction,|
+|||REVENGE|
