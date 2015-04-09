@@ -4,7 +4,7 @@
 class boundedstack
 {
 public:
-  void read(const char **);
+  void read(const char*);
   virtual void push(std::string);
 };
 class boundedstacka : public boundedstack {
@@ -29,7 +29,7 @@ private:
   size_t top;
 };
 
-void boundedstack::read(const char * infi[256])
+void boundedstack::read(const char infi[256])
 {
   std::ifstream iflol;
   std::string temps;
