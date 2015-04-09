@@ -76,7 +76,7 @@ You have some flexibility in the way you design your code for this lab. I have a
 
 [Link to tasks](https://online.santarosa.edu/moodle/mod/assign/view.php?id=165282)
 
-A reverse poem, or palindrome poem, is a poem that can be read forwards one way and have a meaning, but also be read backwards and have another different meaning. Here is a great example on YouTube (the reader reverses it): (Lost Generation)[http://www.youtube.com/watch?feature=player_embedded&v=42E2fAWM6rA]
+A reverse poem, or palindrome poem, is a poem that can be read forwards one way and have a meaning, but also be read backwards and have another different meaning. Here is a great example on YouTube (the reader reverses it): [Lost Generation](http://www.youtube.com/watch?feature=player_embedded&v=42E2fAWM6rA)
 
 For this project, you will create a function that will allow a poet to write the forward poem and output the entire reverse poem: the original forward poem followed by its mirror image. For example, if this poem is entered:
     REVENGE
@@ -100,7 +100,7 @@ The output should be:
 
 To accomplish this objective, create two objects of a template queue class and put each line of the forward poem into each object. Then, create a recursive template function to reverse one of the queues and push each line onto the other queue so that it contains the entire palindrome poem.
 
-This needs to be a template function because the poet may want to create a palindrome poem using characters rather than entire strings. For an example of a character palindrome poem, check out this page (scroll to example 2): (Reverse Poetry)[http://wikidave.wikispaces.com/Reverse+Poetry]
+This needs to be a template function because the poet may want to create a palindrome poem using characters rather than entire strings. For an example of a character palindrome poem, check out this page (scroll to example 2): [Reverse Poetry](http://wikidave.wikispaces.com/Reverse+Poetry)
 
 For this project, use the following prototype:
     template&lt;class Item&gt;
