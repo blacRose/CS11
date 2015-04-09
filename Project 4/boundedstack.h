@@ -4,13 +4,12 @@
 class boundedstack
 {
 public:
-  void read(std::string);
+  void read(const char *);
   virtual void push(std::string);
 };
 class boundedstacka : public boundedstack {
 public:
   boundedstacka() : size(0) {};
-  void read(std::string);
   virtual void push(std::string);
   std::string pop();
   std::string tops();
@@ -21,7 +20,6 @@ private:
 class boundedstackb : public boundedstack {
 public:
   boundedstackb() : top(50), size(0) {};
-  void read(std::string);
   virtual void push(std::string);
   std::string pop();
   std::string tops();
