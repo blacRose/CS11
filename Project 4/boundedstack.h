@@ -29,7 +29,7 @@ private:
   size_t top;
 };
 
-void boundedstack::read(std::string infi)
+void boundedstack::read(const char * infi[256])
 {
   std::ifstream iflol;
   std::string temps;
