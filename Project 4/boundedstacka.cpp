@@ -2,7 +2,7 @@
 #include "boundedstacka.h"
 
 // uses a size var to see how many are in it.
-// ordered starting at 0 (size)
+// ordered starting at 0 (size)... stores from the front of the array
 
 boundedstacka::boundedstacka() : size(0) {}
 

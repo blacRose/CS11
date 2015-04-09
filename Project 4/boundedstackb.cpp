@@ -1,7 +1,7 @@
 #include <iostream>
 #include "boundedstackb.h"
 
-// ordered starting at 50 (top)
+// ordered starting at 50 (top)... stores from the back of the array
 
 boundedstackb::boundedstackb() : top(50) size(0) {}
 
