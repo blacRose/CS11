@@ -4,8 +4,6 @@
 // uses a size var to see how many are in it.
 // ordered starting at 0 (size)... stores from the front of the array
 
-boundedstacka::boundedstacka() : size(0) {}
-
 void boundedstacka::push(std::string pdata)
 {
   if (size() == 50)
@@ -38,15 +36,5 @@ std::string boundedstacka::pop()
 }
 std::string boundedstacka::top()
 {
-  return data[0];
-}
-void boundedstacka::read(std::string infi)
-{
-  std::ifstream iflol;
-  std::string temps;
-  iflol.open(infi);
-  while (getline(iflol, temps)) {
-    push(temps);
-  }
-  iflol.close();
+  return data[size];
 }

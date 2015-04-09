@@ -3,8 +3,6 @@
 
 // ordered starting at 50 (top)... stores from the back of the array
 
-boundedstackb::boundedstackb() : top(50) size(0) {}
-
 void boundedstackb::push(std::string pdata) {
   if (top == 1) {
     pop();
@@ -30,14 +28,4 @@ std::string boundedstackb::pop() {
 std::string boundedstackb::top()
 {
   return data[top];
-}
-void boundedstacka::read(std::string infi)
-{
-  std::ifstream iflol;
-  std::string temps;
-  iflol.open(infi);
-  while (getline(iflol, temps)) {
-    push(temps);
-  }
-  iflol.close();
 }
