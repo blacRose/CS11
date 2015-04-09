@@ -9,7 +9,7 @@
 #include "boundedstack.h"
 
 int main() {
-  std::string infile = "";
+  const char * infile = "";
   // read in from data file, a
   boundedstacka bsa;
   bsa.read(infile);
