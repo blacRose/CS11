@@ -2,13 +2,13 @@
 #include "boundedstacka.h"
 
 // uses a size var to see how many are in it.
-// ordered starting at 0
+// ordered starting at 0 (size)
 
 boundedstacka::boundedstacka() : size(0) {}
 
 void boundedstacka::push(std::string pdata)
 {
-  if (data.size() == 50)
+  if (size() == 50)
   {
     // remove the last el (oldest) in array, it's full.
     data[size] = "";
@@ -16,25 +16,29 @@ void boundedstacka::push(std::string pdata)
   }
   // shift all elements and add new to beginnning
   std::string temporary;
-  for (size_t i = data.size(); i > 0; i--)
+  for (size_t i = size(); i > 0; i--)
   {
-    temporary = data.data[i];
-    data.data[i+1] = temporary;
+    temporary = data[i];
+    data[i+1] = temporary;
   }
-  data.data[0] = pdata;
+  data[0] = pdata;
   size++;
 }
 std::string boundedstacka::pop()
 {
   // removes and returns the first (newest) element in the array.
-  temporary = data.data[0];
+  temporary = data[0];
   for (size_t i = 0; i > size; i--)
   {
-    temporary = data.data[i+1];
-    data.data[i] = temporary;
+    temporary = data[i+1];
+    data[i] = temporary;
   }
   size--;
   return temporary;
+}
+std::string boundedstacka::top()
+{
+  return data[0];
 }
 void boundedstacka::read(std::string infi)
 {
@@ -42,7 +46,7 @@ void boundedstacka::read(std::string infi)
   std::string temps;
   iflol.open(infi);
   while (getline(iflol, temps)) {
-    data.push(temps);
+    push(temps);
   }
   iflol.close();
 }

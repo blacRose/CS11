@@ -1,7 +1,7 @@
 #include <iostream>
 #include "boundedstackb.h"
 
-// ordered starting at 50
+// ordered starting at 50 (top)
 
 boundedstackb::boundedstackb() : top(50) size(0) {}
 
@@ -17,15 +17,19 @@ void boundedstackb::push(std::string pdata) {
 std::string boundedstackb::pop() {
   //pulls newest element (data[top]) out and returns it.
   if (top == 50) {
-    std::string temporary = data[top];
+    std::string temporary = top();
     data[top] = "";
     size--;
-    data.top++;
+    top++;
     return temporary;
   } else {
     //can't remove. could cout, but I don't care
     return "";
   }
+}
+std::string boundedstackb::top()
+{
+  return data[top];
 }
 void boundedstacka::read(std::string infi)
 {
@@ -33,7 +37,7 @@ void boundedstacka::read(std::string infi)
   std::string temps;
   iflol.open(infi);
   while (getline(iflol, temps)) {
-    data.push(temps);
+    push(temps);
   }
   iflol.close();
 }
