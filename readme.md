@@ -52,7 +52,7 @@ For this assignment, you will be required to give two different implementations 
     With a bit of care, you can more efficiently handle pushes, even those
     involving overflow.
 
-### Grading Criteria:
+#### Grading Criteria:
 
 You have some flexibility in the way you design your code for this lab. I have a few requirements for the structure of your program, but your program may do more than what is required below to meet the functional requirements. Your program should meet the functional requirements and include _a minimum_ of the following:
 
@@ -75,3 +75,64 @@ You have some flexibility in the way you design your code for this lab. I have a
 ###Project 5
 
 [Link to tasks](https://online.santarosa.edu/moodle/mod/assign/view.php?id=165282)
+
+A reverse poem, or palindrome poem, is a poem that can be read forwards one way and have a meaning, but also be read backwards and have another different meaning. Here is a great example on YouTube (the reader reverses it): (Lost Generation)[http://www.youtube.com/watch?feature=player_embedded&v=42E2fAWM6rA]
+
+For this project, you will create a function that will allow a poet to write the forward poem and output the entire reverse poem: the original forward poem followed by its mirror image. For example, if this poem is entered:
+    REVENGE
+    seeks destruction,
+    like a dragon
+    breathes
+    fire
+The output should be:
+    REVENGE
+    seeks destruction,
+    like a dragon
+    breathes
+    fire
+    fire
+    breathes
+    like a dragon
+    seeks destruction,
+    REVENGE
+
+####Requirements
+
+To accomplish this objective, create two objects of a template queue class and put each line of the forward poem into each object. Then, create a recursive template function to reverse one of the queues and push each line onto the other queue so that it contains the entire palindrome poem.
+
+This needs to be a template function because the poet may want to create a palindrome poem using characters rather than entire strings. For an example of a character palindrome poem, check out this page (scroll to example 2): (Reverse Poetry)[http://wikidave.wikispaces.com/Reverse+Poetry]
+
+For this project, use the following prototype:
+    template&lt;class Item&gt;
+    void reversePoem(queue&lt;Item&gt; &initialQ, queue&lt;Item&gt; &finalQ);
+    
+    // **Precondition**: Two objects, initialQ and finalQ, of a queue class have been filled with data.
+    // **Postcondition**: The queue object initialQ has been loaded in reverse order onto the end of the queue object finalQ. In other words, finalQ contains its original data plus the reversed data from initialQ. The initialQ is empty.
+
+Your program must contain the following:
+
+- A template queue class of your choosing. It can be the template queue class demonstrated in lecture, a template queue class from a textbook or the Internet (please give attribution) or the STL queue class.
+- A function using the prototype listed above. This function must be a template function and a recursive function.
+- A main function that loads two queue objects and calls the reversePoem function, then the main function should pop all of the contents of the finalQ for display.
+
+Here is an example in which the the poem above would be loaded into the queue objects. The chart below shows the queue states before and after the reversePoem function is called. The data is displayed from the front of the queue on top, to the back of the queue on bottom.
+
+<table>
+<tbody>
+<tr>
+<td></td>
+<td>Before the function</td>
+<td>After the function</td>
+</tr>
+<tr>
+<td>initialQ</td>
+<td>REVENGE<br> seeks destruction,<br> like a dragon<br> breathes<br> fire</td>
+<td>/*EMPTY*/</td>
+</tr>
+<tr>
+<td>finalQ</td>
+<td>REVENGE<br> seeks destruction,<br> like a dragon<br> breathes<br> fire</td>
+<td>REVENGE<br> seeks destruction,<br> like a dragon<br> breathes<br> fire<br> fire<br> breathes<br> like a dragon<br> seeks destruction,<br> REVENGE</td>
+</tr>
+</tbody>
+</table>
