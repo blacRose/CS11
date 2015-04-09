@@ -6,25 +6,26 @@
 */
 
 #include <iostream>
-#include "boundedstacka.h"
-#include "boundedstackb.h"
+#include "boundedstack.h"
 
 int main() {
   std::string infile = "";
   // read in from data file, a
-  boundedstacka.read(infile);
+  boundedstacka bsa;
+  bsa.read(infile);
   // pop all in order, a
   std::cout << "BoundedStackA output" << std::endl;
   for (size_t i = 0; i <= 50; i++)
   {
-    std::cout << i << ": " << boundedstacka.pop() << std::endl;
+    std::cout << i << ": " << bsa.pop() << std::endl;
   }
   // read in from data file, b
-  boundedstackb.read(infile);
+  boundedstackb bsb;
+  bsb.read(infile);
   // pop all in order, b
   std::cout << "BoundedStackB output" << std::endl;
   for (size_t i = 0; i <= 50; i++)
   {
-    std::cout << i << ": " << boundedstackb.pop() << std::endl;
+    std::cout << i << ": " << bsb.pop() << std::endl;
   }
 }
