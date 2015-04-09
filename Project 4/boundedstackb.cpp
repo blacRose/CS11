@@ -3,7 +3,8 @@
 
 // ordered starting at 50 (top)... stores from the back of the array
 
-void boundedstackb::push(std::string pdata) {
+void boundedstackb::push(std::string pdata)
+{
   if (top == 1) {
     pop();
   } else {
