@@ -80,37 +80,24 @@ A reverse poem, or palindrome poem, is a poem that can be read forwards one way 
 
 For this project, you will create a function that will allow a poet to write the forward poem and output the entire reverse poem: the original forward poem followed by its mirror image. For example, if this poem is entered:
 
-REVENGE
-
-seeks destruction,
-
-like a dragon
-
-breathes
-
-fire
+    REVENGE
+    seeks destruction,
+    like a dragon
+    breathes
+    fire
 
 The output should be:
 
-REVENGE
-
-seeks destruction,
-
-like a dragon
-
-breathes
-
-fire
-
-fire
-
-breathes
-
-like a dragon
-
-seeks destruction,
-
-REVENGE
+    REVENGE
+    seeks destruction,
+    like a dragon
+    breathes
+    fire
+    fire
+    breathes
+    like a dragon
+    seeks destruction,
+    REVENGE
 
 ####Requirements
 
