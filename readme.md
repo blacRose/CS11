@@ -119,5 +119,5 @@ Here is an example in which the the poem above would be loaded into the queue ob
 
 ||Before the function|After the function|
 |---|---|---|
-|initialQ|REVENGE<br> seeks destruction,<br> like a dragon<br> breathes<br> fire|/*EMPTY*/|
+|initialQ|REVENGE<br> seeks destruction,<br> like a dragon<br> breathes<br> fire|/\*EMPTY\*/|
 |finalQ|REVENGE<br> seeks destruction,<br> like a dragon<br> breathes<br> fire|REVENGE<br> seeks destruction,<br> like a dragon<br> breathes<br> fire<br> fire<br> breathes<br> like a dragon<br> seeks destruction,<br> REVENGE|
