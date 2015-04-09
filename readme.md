@@ -104,8 +104,8 @@ This needs to be a template function because the poet may want to create a palin
 
 For this project, use the following prototype:
 
-    template\<class Item&gt;
-    void reversePoem(queue\<Item&gt; &initialQ, queue\<Item&gt; &finalQ);
+    template<class Item>
+    void reversePoem(queue<Item> &initialQ, queue<Item> &finalQ);
     // Precondition: Two objects, initialQ and finalQ, of a queue class have been filled with data.
     // Postcondition: The queue object initialQ has been loaded in reverse order onto the end of the queue object finalQ. In other words, finalQ contains its original data plus the reversed data from initialQ. The initialQ is empty.
 
