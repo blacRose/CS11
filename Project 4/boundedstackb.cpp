@@ -2,6 +2,10 @@
 #include "boundedstack.h"
 
 // ordered starting at 50 (top)... stores from the back of the array
+// Handles overflow by pushing the first, oldest element (0) into nothing, then
+// shifting the other elements up, and throws the new element in 50.
+// The newest element is at the value of top (when full, 1), going back in time to 50.
+
 
 void boundedstackb::push(std::string pdata)
   {
