@@ -5,23 +5,23 @@
 // ordered starting at 0 (size)... stores from the front of the array
 
 void boundedstacka::push(std::string pdata)
-{
-  if (size == 50)
   {
-    // remove the last el (oldest) in array, it's full.
-    data[size] = "";
-    size--;
+    if (size == 50)
+    {
+      // remove the last el (oldest) in array, it's full.
+      data[size] = "";
+      size--;
+    }
+    // shift all elements and add new to beginnning
+    std::string temporary;
+    for (size_t i = size; i > 0; i--)
+    {
+      temporary = data[i];
+      data[i+1] = temporary;
+    }
+    data[0] = pdata;
+    size++;
   }
-  // shift all elements and add new to beginnning
-  std::string temporary;
-  for (size_t i = size; i > 0; i--)
-  {
-    temporary = data[i];
-    data[i+1] = temporary;
-  }
-  data[0] = pdata;
-  size++;
-}
 std::string boundedstacka::pop()
 {
   // removes and returns the first (newest) element in the array.
