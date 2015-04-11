@@ -10,7 +10,7 @@
 void boundedstackb::push(std::string pdata)
 {
   if (top == 0) {
-    pop(top);
+    pop();
     shift("down");
   } else {
     top--;
