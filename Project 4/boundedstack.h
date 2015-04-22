@@ -4,7 +4,7 @@
 class boundedstack
 {
 public:
-  void read(const char infi[256])
+  void read(std::string infi)
   {
     std::ifstream iflol;
     std::string temps;

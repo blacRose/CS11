@@ -9,7 +9,7 @@
 #include "boundedstack.h"
 
 int main() {
-  const char * infile = "";
+  std::string infile = "weblog_unique.url";
   // read in from data file, a
   boundedstacka bsa;
   bsa.read(infile);
