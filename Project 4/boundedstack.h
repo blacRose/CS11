@@ -26,7 +26,7 @@ public:
       }
     } else if (dir == "down"){
       std::string temporary;
-      for (size_t i = size; i > 0; i--)
+      for (int i = (int)size; i >= 0; i--)
       {
         temporary = data[i];
         data[i+1] = temporary;

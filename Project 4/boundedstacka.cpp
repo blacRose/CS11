@@ -23,10 +23,9 @@ std::string boundedstacka::pop()
 {
   // removes and returns the first (newest) element in the array.
   std::string temporary = data[0];
-  for (size_t i = 0; i > size; i--)
+  for (size_t i = 0; i < 49; i++)
   {
-    temporary = data[i+1];
-    data[i] = temporary;
+    data[i] = data[i+1];
   }
   size--;
   return temporary;
