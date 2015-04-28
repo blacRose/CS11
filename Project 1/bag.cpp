@@ -2,11 +2,12 @@
 #include <fstream>
 #include <vector>
 #include <string>
-#include <sstream>
-#include <stdio.h>
-#include <regex>
 #include "bag.h"
 
+// Class "bag" implementation!
+// building "in memory" storage for data to allow easier use.
+
+// Opens a file and reads it into the bag, line by line!
 void bag::opens(std::string infi) {
   std::ifstream iflol;
   std::string temps;
@@ -16,6 +17,8 @@ void bag::opens(std::string infi) {
   }
   iflol.close();
 }
+
+// finds where in the bag a string is stored. Returns where the last one is
 size_t bag::where(std::string whatstr) const {
   size_t which = 9999;
   if (data.size() != 0) {
@@ -26,6 +29,8 @@ size_t bag::where(std::string whatstr) const {
   }
   return which;
 }
+
+// digs through my bags to build a linked list in format "IP: pagelocationinuniquelist pagelocationinuniquelist <etc.>"
 void bag::whowhere(bag pages, bag &iplist, bag &linked) {
   std::string pag, eyepee, strup;
   for (size_t i = 0; i <= data.size() - 1; i++) {
@@ -46,20 +51,23 @@ void bag::whowhere(bag pages, bag &iplist, bag &linked) {
     }
   }
 }
+
+// shows the contents of the bag
 void bag::print(bag pag) const {
   std::cout << data.size();
   for (size_t i = 0; i <= data.size() - 1; i++) {
     std::cout << data.at(i) << ": " << pag.get(i) << std::endl;
   }
 }
+
+// essentially, wrapper for vector at() for external access from outside of that bag.
 std::string bag::get(size_t whe) const { return data.at(whe); }
+
+// essentially, wrapper for vector emplace_back() for external access from outside of that bag.
+// wouldn't private be WAY easier?!
+void bag::putback(std::string thes) { data.emplace_back(thes); }
+
+// puts something in at a specific location
 void bag::put(std::string thes, size_t whe) {
   data.at(whe) = thes;
-  // data.emplace(data.begin() + whe, thes);
-  // data.erase(data.begin() + whe + 1);
-}
-void bag::putback(std::string thes) { data.emplace_back(thes); }
-void bag::srm() {
-  sort(data.begin(), data.end());
-  data.erase(std::unique(data.begin(), data.end()), data.end());
 }
