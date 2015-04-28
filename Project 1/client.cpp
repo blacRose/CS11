@@ -2,6 +2,8 @@
 #include <vector>
 #include "bag.h"
 
+// What is meant by this?: Also, please indicate what you did, if anything for the extra 2 ...
+
 int main() {
   // main is here, if you don't see that!
   bag weblog, pages, iplist, linked;
