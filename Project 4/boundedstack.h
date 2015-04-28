@@ -27,7 +27,7 @@ public:
     {
       for (size_t i = 0; i <= 49; i++)
       {
-        std::cout << i + 1 << ": " << bsa.pop() << std::endl;
+        std::cout << i + 1 << ": " << pop() << std::endl;
       }
     }
     virtual void push(std::string) = 0;
