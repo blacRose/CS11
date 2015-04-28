@@ -9,23 +9,23 @@
 
 void boundedstacka::push(std::string pdata)
 {
-    if (size > 49)
-    {
-        // remove the last el (oldest) in array, it's full.
-        data[49] = "";
-        size--;
-    }
-    shift("down", size);
-    data[0] = pdata;
-    size++;
+  if (size > 49)
+  {
+    // remove the last el (oldest) in array, it's full.
+    data[49] = "";
+    size--;
+  }
+  shift(size);
+  data[0] = pdata;
+  size++;
 }
 std::string boundedstacka::pop()
 {
-    // removes and returns the first (newest) element in the array.
-    std::string temporary = data[0];
-    // shift all elements up one.
-    size--;
-    for (int i = 0; i < 49; i++)
-        data[i] = data[i+1];
-    return temporary;
+  // removes and returns the first (newest) element in the array.
+  std::string temporary = data[0];
+  // shift all elements up one.
+  size--;
+  for (int i = 0; i < 49; i++)
+    data[i] = data[i+1];
+  return temporary;
 }

@@ -9,25 +9,25 @@
 
 void boundedstackb::push(std::string pdata)
 {
-  if (top == 0) {
-    pop();
-    shift("down");
-  } else {
-    top--;
-    size++;
-  }
-  data[top] = pdata;
+    if (size > 49) {
+        top = 0;
+        shift(size);
+    } else {
+        top--;
+        size++;
+    }
+    data[top] = pdata;
 }
 std::string boundedstackb::pop() {
-  //pulls newest element (data[top]) out and returns it.
-  if (top == 50) {
-    std::string temporary = top;
-    data[top] = "";
-    size--;
-    top++;
-    return temporary;
-  } else {
-    //can't remove. could cout, but I don't care
-    return "";
-  }
+    //pulls newest element (data[top]) out and returns it.
+    if (top != 50) {
+        std::string temporary = data[top];
+        data[top] = "";
+        size--;
+        top++;
+        return temporary;
+    } else {
+        //can't remove. could cout, but I don't care
+        return "";
+    }
 }

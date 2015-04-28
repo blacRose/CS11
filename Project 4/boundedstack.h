@@ -14,23 +14,21 @@ public:
         }
         iflol.close();
     }
-    void shift(std::string dir, size_t sizes)
+    void shift(size_t sizes)
     {
-        if (dir == "up" && top < 49)
+        for (int i = (int)sizes; i >= 0; i--)
         {
-            std::string temporary;
-            for (size_t i = top; i < 49; i++)
-            {
-                temporary = data[i];
-                data[i+1] = temporary;
-            }
-        } else if (dir == "down" && size > 0){
-            for (int i = (int)sizes; i >= 0; i--)
-            {
-                if (i < 50)
-                    data[i] = data[i-1];
-            }
+            if (i < 50)
+                data[i] = data[i-1];
         }
+        
+    }
+    void empty()
+    {
+      for (size_t i = 0; i <= 49; i++)
+      {
+        std::cout << i + 1 << ": " << bsa.pop() << std::endl;
+      }
     }
     virtual void push(std::string) = 0;
     virtual std::string pop() = 0;
