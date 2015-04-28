@@ -14,13 +14,13 @@ int main() {
   boundedstacka bsa;
   bsa.read(infile);
   // pop all in order, a
-  std::cout << "BoundedStackA output" << std::endl;
+  std::cout << "BoundedStackA output" << std::endl << "----" << std::endl;
   bsa.empty();
   
   // read in from data file, b
   boundedstackb bsb;
   bsb.read(infile);
   // pop all in order, b
-  std::cout << "BoundedStackB output" << std::endl;
+  std::cout << std::endl << "BoundedStackB output" << std::endl << "----" << std::endl;
   bsb.empty();
 }
