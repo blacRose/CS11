@@ -11,9 +11,18 @@
 using namespace std;
 
 template <class Item> void reversePoem(queue<Item>, queue<Item> &);
-void input(queue<char> &, queue<char> &);
-void input(queue<string> &, queue<string> &);
-template <class Item> void printPoem(queue<Item>);
+template <class Item>
+class revPoem
+{
+public:
+  void input();
+  void sortPoem();
+  friend std::ostream &operator<<(std::ostream &, const revPoem &);
+  void printPoem();
+private:
+  queue<Item> initialQ;
+  queue<Item> finalQ;
+};
 
 int main() {
   char type;
@@ -82,3 +91,4 @@ void input(queue<string> &initialQ, queue<string> &finalQ)
     finalQ.emplace(inputs);
   }
 }
+ov
