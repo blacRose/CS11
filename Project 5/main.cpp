@@ -10,41 +10,27 @@
 #include <queue>
 using namespace std;
 
-template <class Item> void reversePoem(queue<Item>, queue<Item> &);
+#include "reversepoem.cpp"
+
 template <class Item>
-class revPoem
+class reversePoem
 {
 public:
   void input();
   void sortPoem();
-  friend std::ostream &operator<<(std::ostream &, const revPoem &);
+  friend std::ostream &operator<<(std::ostream &, const reversePoem &);
   void printPoem();
 private:
   queue<Item> initialQ;
   queue<Item> finalQ;
 };
-
-int main() {
-  char type;
-  cout << "String (enter s), or char (c)?" << endl;
-  cin >> type;
-  if (type == 'c') {
-    queue<char> initialQ, finalQ;
-  } else if (type == 's') {
-    queue<string> initialQ, finalQ;
-  }
-    input(initialQ, finalQ);
-    reversePoem(initialQ, finalQ);
-    printPoem(finalQ);
-}
-
 template <class Item>
-void reversePoem(queue<Item> initialQ, queue<Item> &finalQ) {
+void reversePoem::sortPoem() {
   queue<Item> tempQ = initialQ;
   // Precondition: Two objects, initialQ and finalQ, of a queue class have been
   // filled with data.
   while (!initialQ.empty()) {
-    finalQ.emplace(initialQ.front());
+    finalQ.emplace(tempQ.front());
     tempQ.pop();
   }
   // Postcondition: The queue object initialQ has been loaded in reverse order
@@ -53,42 +39,38 @@ void reversePoem(queue<Item> initialQ, queue<Item> &finalQ) {
   // empty.
 }
 template <class Item>
-void printPoem(queue<Item> finalQ) {
+ostream &reversePoem::operator>>(istream &eyes, const reversePoem &l)
+{
+  initialQ.emplace(eyes);
+}
+template <class Item>
+void reversePoem::printPoem() {
   cout << "Your poem" << endl;
   while (!finalQ.empty()) {
     cout << finalQ.front() << endl;
     finalQ.pop();
   }
 }
-void input(queue<char> &initialQ, queue<char> &finalQ)
+template <class Item>
+void reversePoem::input()
 {
   cout << "Enter lines, or an empty line to quit" << endl;
-  get(inputs, initialQ, finalQ);
-  char inputs;
-  int poo;
-  while (1)
-  {
-    cin.get(inputs);
-    if (inputs != '\n') {
-      initialQ.emplace(inputs);
-      finalQ.emplace(inputs);
-      poo = 0;
-    } else if (inputs == '\n' && poo != 1) {
-      poo++;
-    } else if (inputs == '\n' && poo == 1) {
-      break;
-    }
-  }
+  cin >> initialQ;
 }
-void input(queue<string> &initialQ, queue<string> &finalQ)
-{
-  string inputs;
-  cout << "Enter lines, or an empty line to quit" << endl;
-  while (!cin.eof())
-  {
-    cin.getline(inputs);
-    initialQ.emplace(inputs);
-    finalQ.emplace(inputs);
+int main() {
+  char type;
+  cout << "String (enter s), or char (c)?" << endl;
+  cin >> type;
+  reversePoem<string> poetyo;
+  if (type == 'c') {
+    delete &poetyo;
+    reversePoem<char> poetyo;
+  } else if (type == 's') {
+    delete &poetyo;
+    reversePoem<string> poetyo;
   }
+    poetyo.input();
+    poetyo.sortPoem();
+    poetyo.printPoem();
 }
-ov
+
