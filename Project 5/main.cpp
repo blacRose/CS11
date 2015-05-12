@@ -5,6 +5,7 @@
 * Author: Shelby Munsch
 */
 // TODO: overload >>!
+// TODO: build destructor
 
 #include <iostream>
 #include <queue>
@@ -16,14 +17,14 @@ int main() {
   char type;
   cout << "String (enter s), or char (c)?" << endl;
   cin >> type;
-  reversePoem<string> poetyo;
-  if (type == 'c') {
-    delete &poetyo;
-    reversePoem<char> poetyo;
-  } else if (type == 's') {
-    delete &poetyo;
-    reversePoem<string> poetyo;
-  }
+  reversePoem<char> poetyo;
+//   if (type == 'c') {
+//     delete &poetyo;
+//     reversePoem poetyo;
+//   } else if (type == 's') {
+//     delete &poetyo;
+//     reversePoem poetyo;
+//   }
     poetyo.input();
     poetyo.sortPoem();
     poetyo.printPoem();
