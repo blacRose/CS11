@@ -4,8 +4,6 @@
 * MM, YUP!
 * Author: Shelby Munsch
 */
-// TODO: overload >>!
-// TODO: build destructor
 
 #include <iostream>
 #include <queue>
