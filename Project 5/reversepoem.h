@@ -48,12 +48,12 @@ template<> class reversePoem<char>
 public:
   void input()
   {
-    char input[256];
-    while (input != "")
+    char input[256] = "";
+    while (!strcmp(input,""))
     {
       cout << "Enter lines, or an empty line to quit" << endl;
       cin.getline(input, 256);
-      if (input != "")
+      if (!strcmp(input,""))
         break;
       for (size_t i=0; i<256; i++)
       {
@@ -67,12 +67,12 @@ template<> class reversePoem<string>
 {
   void input()
   {
-    char input[256];
-    while (input != "")
+    char input[256] = "";
+    while (!strcmp(input,""))
     {
       cout << "Enter lines, or an empty line to quit" << endl;
       cin.getline(input, 256);
-      if (input != "")
+      if (!strcmp(input,""))
         break;
       initialQ.emplace((string)input);
     }

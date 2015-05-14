@@ -91,4 +91,3 @@ void input(queue<string> &initialQ, queue<string> &finalQ)
     finalQ.emplace(inputs);
   }
 }
-ov

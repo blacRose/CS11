@@ -18,15 +18,15 @@ int main() {
   cout << "String (enter s), or char (c)?" << endl;
   cin >> type;
   reversePoem<char> poetyo;
-//   if (type == 'c') {
-//     delete &poetyo;
-//     reversePoem poetyo;
-//   } else if (type == 's') {
-//     delete &poetyo;
-//     reversePoem poetyo;
-//   }
-    poetyo.input();
-    poetyo.sortPoem();
-    poetyo.printPoem();
+  if (type == 'c') {
+    delete &poetyo;
+    reversePoem<char> poetyo;
+  } else if (type == 's') {
+    delete &poetyo;
+    reversePoem<string> poetyo;
+  }
+  poetyo.input();
+  poetyo.sortPoem();
+  poetyo.printPoem();
 }
 
