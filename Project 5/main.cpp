@@ -17,16 +17,18 @@ int main() {
   char type;
   cout << "String (enter s), or char (c)?" << endl;
   cin >> type;
-  reversePoem<char> poetyo;
   if (type == 'c') {
-    // delete poetyo; huh? error
-    reversePoem<char> poetyo;
+    reversePoem<char> hai;
+    hai.input();
+    hai.sortPoem();
+    hai.printPoem();
   } else if (type == 's') {
-    // delete poetyo; huh? error
-    reversePoem<string> poetyo;
+    reversePoem<string> hai;
+    hai.input();
+    hai.sortPoem();
+    hai.printPoem();
+  } else {
+    return 1;
   }
-  poetyo.input();
-  poetyo.sortPoem();
-  poetyo.printPoem();
+  return 0;
 }
-
