@@ -19,10 +19,10 @@ int main() {
   cin >> type;
   reversePoem<char> poetyo;
   if (type == 'c') {
-    delete &poetyo;
+    // delete poetyo; huh? error
     reversePoem<char> poetyo;
   } else if (type == 's') {
-    delete &poetyo;
+    // delete poetyo; huh? error
     reversePoem<string> poetyo;
   }
   poetyo.input();
