@@ -6,7 +6,7 @@
 */
 
 #include <iostream>
-#include <queue>
+#include <deque>
 using namespace std;
 
 #include "reversepoem.cpp"
@@ -14,16 +14,15 @@ using namespace std;
 int main() {
   char type;
   cout << "String (enter s), or char (c)?" << endl;
-  cin >> type;
+  cin.get(type);
+  cin.ignore();
   if (type == 'c') {
     reversePoem<char> hai;
     hai.input();
-    hai.sortPoem();
     hai.printPoem();
   } else if (type == 's') {
     reversePoem<string> hai;
     hai.input();
-    hai.sortPoem();
     hai.printPoem();
   } else {
     return 1;

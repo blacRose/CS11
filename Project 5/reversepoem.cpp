@@ -1,77 +1,72 @@
 #include "reversepoem.h"
 
-
-
-
 void reversePoem<char>::input()
 {
   char input[512] = "hi";
-  cout << "char!";
-  while (strncmp(input,"",512) != 0)
+  string huh = "bob";
+  while (!huh.empty())
   {
     cout << "Enter lines, or an empty line to quit" << endl;
     cin.getline(input, 512);
-    if (strncmp(input,"",512) == 0)
-      break;
-    for (size_t i=0; i<512; i++)
+    cout << input << endl;
+    huh = (string)input;
+    if (huh.empty())
     {
-      if (input[i]=='\0')
-        break;
-      initialQ.emplace(input[i]);
+      break;
+    } else {
+      for (size_t i=0; i<512; i++)
+      {
+        if (input[i]=='\0')
+          break;
+        initialQ.emplace_front(input[i]);
+      }
     }
   }
 }
 
 void reversePoem<string>::input()
 {
+  string huh = "bob";
   char input[512] = "hi";
   cout << "string!";
-  while (strncmp(input,"",512) != 0)
+  while (!huh.empty())
   {
     cout << "Enter lines, or an empty line to quit" << endl;
     cin.getline(input, 512);
-    if (strncmp(input,"",512) == 0)
+    huh = (string)input;
+    if (huh.empty())
+    {
       break;
-    initialQ.emplace((string)input);
+    } else {
+      initialQ.emplace_front((string)input);
+    }
   }
 }
 void reversePoem<string>::printPoem()
 {
-  std::cout << "Your initial poem…" << std::endl;
+  deque<string> tempQ = initialQ;
+  // std::cout << "Your initial poem…" << std::endl;
   while (!initialQ.empty()) {
-    std::cout << initialQ.front() << std::endl;
-    initialQ.pop();
+    std::cout << initialQ.back() << std::endl;
+    initialQ.pop_back();
   }
-  std::cout << "Your final poem…" << std::endl;
-  while (!finalQ.empty()) {
-    std::cout << finalQ.front() << std::endl;
-    finalQ.pop();
-  }
-}
-void reversePoem<string>::sortPoem() {
-  queue<string> tempQ = initialQ;
-  while (!initialQ.empty()) {
-    finalQ.emplace(tempQ.front());
-    tempQ.pop();
+  // std::cout << "Your final poem…" << std::endl;
+  while (!tempQ.empty()) {
+    std::cout << tempQ.front() << std::endl;
+    tempQ.pop_front();
   }
 }
 void reversePoem<char>::printPoem()
 {
-  std::cout << "Your initial poem…" << std::endl;
+  deque<char> tempQ = initialQ;
+  // std::cout << "Your initial poem…" << std::endl;
   while (!initialQ.empty()) {
-    std::cout << initialQ.front() << std::endl;
-    initialQ.pop();
+    std::cout << initialQ.back() << std::endl;
+    initialQ.pop_back();
   }
-  std::cout << "Your final poem…" << std::endl;
-  while (!finalQ.empty()) {
-    std::cout << finalQ.front() << std::endl;
-    finalQ.pop();
-  }
-}
-void reversePoem<char>::sortPoem() {
-  queue<char> tempQ = initialQ;
-  while (!initialQ.empty()) {
-    finalQ.emplace(tempQ.front());
-    tempQ.pop();
+  // std::cout << "Your final poem…" << std::endl;
+  while (!tempQ.empty()) {
+    std::cout << tempQ.front() << std::endl;
+    tempQ.pop_front();
   }
 }

@@ -4,10 +4,9 @@ template<> class reversePoem<char>
 public:
   void input();
   void printPoem();
-  void sortPoem();
 private:
-  queue<char> initialQ;
-  queue<char> finalQ;
+  deque<char> initialQ;
+  deque<char> finalQ;
 };
 
 template<> class reversePoem<string>
@@ -15,8 +14,7 @@ template<> class reversePoem<string>
 public:
   void input();
   void printPoem();
-  void sortPoem();
 private:
-  queue<string> initialQ;
-  queue<string> finalQ;
+  deque<string> initialQ;
+  deque<string> finalQ;
 };
