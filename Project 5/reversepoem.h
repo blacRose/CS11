@@ -1,68 +1,80 @@
 template<class Item> class reversePoem
 {
 public:
-  void input();
-  template void sortPoem();
-  void printPoem();
+  void input()
+  {
+    char input[256];
+    while (input != "")
+    {
+      cout << "Enter lines, or an empty line to quit" << endl;
+      cin.getline(input, 256);
+      if (input != "")
+        break;
+      if char, loop
+        for (size_t i=0; i<256; i++)
+      {
+        initialQ.emplace(input[i]);
+      }
+      if string, insert
+        initialQ.emplace((string)input);
+    }
+  }
+  void printPoem()
+  {
+    std::cout << "Your initial poem…" << std::endl;
+    while (!initialQ.empty()) {
+      std::cout << initialQ.front() << std::endl;
+      initialQ.pop();
+    }
+    std::cout << "Your final poem…" << std::endl;
+    while (!finalQ.empty()) {
+      std::cout << finalQ.front() << std::endl;
+      finalQ.pop();
+    }
+  }
+  void sortPoem() {
+    queue<Item> tempQ = initialQ;
+    while (!initialQ.empty()) {
+      finalQ.emplace(tempQ.front());
+      tempQ.pop();
+    }
+  }
 private:
-  queue<char> initialQ;
-  queue<char> finalQ;
+  queue<Item> initialQ;
+  queue<Item> finalQ;
 };
-
 template<> class reversePoem<char>
 {
 public:
   void input()
   {
-    char input;
-    cout << "Enter lines, or an empty line to quit" << endl;
-    cin >> input;
-    initialQ.emplace(input);
-  }
-  void sortPoem() {
-    queue<char> tempQ = initialQ;
-    while (!initialQ.empty()) {
-      finalQ.emplace(tempQ.front());
-      tempQ.pop();
+    char input[256];
+    while (input != "")
+    {
+      cout << "Enter lines, or an empty line to quit" << endl;
+      cin.getline(input, 256);
+      if (input != "")
+        break;
+      for (size_t i=0; i<256; i++)
+      {
+        initialQ.emplace(input[i]);
+      }
     }
   }
-  void printPoem() {
-    std::cout << "Your poem" << std::endl;
-    while (!finalQ.empty()) {
-      std::cout << finalQ.front() << std::endl;
-      finalQ.pop();
-    }
-  }
-private:
-  queue<char> initialQ;
-  queue<char> finalQ;
 };
 
-template<> class reversePoem<std::string>
+template<> class reversePoem<string>
 {
-public:
   void input()
   {
-    std::string input;
-    cout << "Enter lines, or an empty line to quit" << endl;
-    cin >> input;
-    initialQ.emplace(input);
-  }
-  void sortPoem() {
-    queue<std::string> tempQ = initialQ;
-    while (!initialQ.empty()) {
-      finalQ.emplace(tempQ.front());
-      tempQ.pop();
+    char input[256];
+    while (input != "")
+    {
+      cout << "Enter lines, or an empty line to quit" << endl;
+      cin.getline(input, 256);
+      if (input != "")
+        break;
+      initialQ.emplace((string)input);
     }
   }
-  void printPoem() {
-    std::cout << "Your poem" << std::endl;
-    while (!finalQ.empty()) {
-      std::cout << finalQ.front() << std::endl;
-      finalQ.pop();
-    }
-  }
-private:
-  queue<std::string> initialQ;
-  queue<std::string> finalQ;
-};
+}
